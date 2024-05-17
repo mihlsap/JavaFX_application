@@ -1,0 +1,18 @@
+.root{
+    -fx-font: 10pt "Arial";
+}
+/*.button{*/
+/*    -fx-background-color: lightseagreen;*/
+/*}*/
+.no_button{
+    -fx-background-color: darkred;
+    -fx-text-fill: white;
+}
+.teachers_buttons{
+    -fx-background-color: blueviolet;
+    -fx-text-fill: white;
+}
+.groups_buttons{
+    -fx-background-color: darkcyan;
+    -fx-text-fill: white;
+}
