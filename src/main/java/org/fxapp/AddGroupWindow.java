@@ -13,6 +13,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public class AddGroupWindow {
@@ -64,7 +65,7 @@ public class AddGroupWindow {
             } catch (NumberFormatException e) {
                 Toolkit.getDefaultToolkit().beep();
                 AlertWindow.display("Entered maximum occupancy is invalid!");
-               return;
+                return;
             }
 
             if (name_of_group.isEmpty()) {
@@ -82,7 +83,7 @@ public class AddGroupWindow {
 
         Button cancel_button = new Button();
         cancel_button.setText("Cancel");
-        cancel_button.setStyle("-fx-background-color: Red");
+        cancel_button.getStyleClass().add("no_button");
         cancel_button.setOnAction(actionEvent -> {
             Toolkit.getDefaultToolkit().beep();
             if (ConfirmationWindow.display(message))
@@ -98,6 +99,7 @@ public class AddGroupWindow {
         vBox.getChildren().addAll(gridPane, h_layout);
 
         Scene scene = new Scene(vBox);
+        scene.getStylesheets().add(Objects.requireNonNull(AddGroupWindow.class.getResource("style.css")).toExternalForm());
         window.setScene(scene);
         window.showAndWait();
     }

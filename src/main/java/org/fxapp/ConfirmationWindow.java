@@ -29,7 +29,7 @@ public class ConfirmationWindow {
             windowEvent.consume();
         });
 
-        Image icon = new Image("C:\\Users\\Dell\\Desktop\\stuff\\studia\\semestr 4\\Programowanie aplikacji użytkowych\\fxapp\\src\\main\\resources\\org\\fxapp\\warning_sign_2.png");
+        Image icon = new Image("C:\\Users\\Dell\\Desktop\\stuff\\studia\\semestr 4\\Programowanie aplikacji użytkowych\\fxapp\\src\\main\\resources\\org\\fxapp\\warning_sign.png");
         window.getIcons().add(icon);
 
         Label label = new Label();
@@ -61,7 +61,7 @@ public class ConfirmationWindow {
 
         Scene scene = new Scene(vBox);
 
-        scene.getStylesheets().add(Objects.requireNonNull(ConfirmationWindow.class.getResource("Viper.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(ConfirmationWindow.class.getResource("style.css")).toExternalForm());
 
         window.setScene(scene);
         window.showAndWait();

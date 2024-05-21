@@ -109,6 +109,7 @@ public class Main extends Application {
         add_teacher_button.setText("Add teacher");
         add_teacher_button.getStyleClass().add("teachers_buttons");
         add_teacher_button.setDisable(true);
+        add_teacher_button.fire();
 
         delete_teacher_button = new Button();
         delete_teacher_button.setText("Delete teacher");
@@ -287,8 +288,6 @@ public class Main extends Application {
             teacherTableView.setItems(sortedData);
         });
 
-
-
         searchHBox.getChildren().addAll(searchLabel, filterField);
 
         vBox.getChildren().addAll(buttonsHBox, searchHBox);
@@ -299,7 +298,7 @@ public class Main extends Application {
 
         scene = new Scene(borderPane);
 
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Viper.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
 
         scene.getRoot().addEventFilter(javafx.scene.input.MouseEvent.MOUSE_CLICKED, mouseEvent -> {
             if (!teacherTableView.getBoundsInParent().contains(mouseEvent.getX(), mouseEvent.getY())) {

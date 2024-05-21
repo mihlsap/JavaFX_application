@@ -13,6 +13,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public class ModifyGroupWindow {
@@ -86,7 +87,7 @@ public class ModifyGroupWindow {
 
         Button cancel_button = new Button();
         cancel_button.setText("Cancel");
-        cancel_button.setStyle("-fx-background-color: Red");
+        cancel_button.getStyleClass().add("no_button");
         cancel_button.setOnAction(actionEvent -> {
             Toolkit.getDefaultToolkit().beep();
             if (ConfirmationWindow.display(message))
@@ -102,6 +103,7 @@ public class ModifyGroupWindow {
         vBox.getChildren().addAll(gridPane, h_layout);
 
         Scene scene = new Scene(vBox);
+        scene.getStylesheets().add(Objects.requireNonNull(ModifyGroupWindow.class.getResource("style.css")).toExternalForm());
         window.setScene(scene);
         window.showAndWait();
     }

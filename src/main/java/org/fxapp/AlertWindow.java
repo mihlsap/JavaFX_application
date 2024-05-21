@@ -10,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.Objects;
 
 public class AlertWindow {
     public static void display(String message) {
@@ -25,7 +26,7 @@ public class AlertWindow {
             windowEvent.consume();
         });
 
-        Image icon = new Image("C:\\Users\\Dell\\Desktop\\stuff\\studia\\semestr 4\\Programowanie aplikacji użytkowych\\fxapp\\src\\main\\resources\\org\\fxapp\\warning_sign_2.png");
+        Image icon = new Image("C:\\Users\\Dell\\Desktop\\stuff\\studia\\semestr 4\\Programowanie aplikacji użytkowych\\fxapp\\src\\main\\resources\\org\\fxapp\\warning_sign.png");
         window.getIcons().add(icon);
 
         Label label = new Label();
@@ -40,6 +41,7 @@ public class AlertWindow {
         layout.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(layout);
+        scene.getStylesheets().add(Objects.requireNonNull(AlertWindow.class.getResource("style.css")).toExternalForm());
         window.setScene(scene);
         window.showAndWait();
     }
