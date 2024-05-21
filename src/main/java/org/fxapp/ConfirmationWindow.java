@@ -44,7 +44,6 @@ public class ConfirmationWindow {
 
         Button no_button = new Button();
         no_button.setText("No");
-//        no_button.setStyle("-fx-background-color: Red");
         no_button.getStyleClass().add("no_button");
         no_button.setOnAction(actionEvent -> {
             choice = false;
